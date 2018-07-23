@@ -1,0 +1,9 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }} {{ version }}
+  </h1>
+</div>
+<div>
+  <input type="text" name="title" (change)="changeTitle($event)" [value]="title" [disabled]="disabled">
+</div>
