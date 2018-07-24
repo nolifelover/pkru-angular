@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
   }
 
   getSetting(){
-    this.db.object("setting").valueChanges().subscribe((result)=>{
+    this.db.object("setting").valueChanges().subscribe((result:any)=>{
       console.log(result)
       this.title = result.title
     });

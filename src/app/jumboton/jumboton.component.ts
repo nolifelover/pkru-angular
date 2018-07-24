@@ -13,7 +13,7 @@ export class JumbotonComponent implements OnInit {
   }
 
   getData(){
-    this.db.object("jumboton").valueChanges().subscribe((result)=>{
+    this.db.object("jumboton").valueChanges().subscribe((result:any)=>{
       console.log(result)
       this.header = result.header
       this.body = result.body
