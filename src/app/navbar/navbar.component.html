@@ -7,10 +7,10 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item {{menu.menus ? 'dropdown':''}}" *ngFor="let menu of menus">
-            <a class="nav-link" [href]="menu.link" *ngIf="!menu.menus">{{menu.name}}</a>
-            <a *ngIf="menu.menus" class="nav-link dropdown-toggle" [href]="menu.link" [id]="menu.id" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{menu.name}}</a>
+            <a class="nav-link" [routerLink]="menu.link" *ngIf="!menu.menus">{{menu.name}}</a>
+            <a *ngIf="menu.menus" class="nav-link dropdown-toggle" [routerLink]="menu.link" [id]="menu.id" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{menu.name}}</a>
             <div *ngIf="menu.menus" class="dropdown-menu" [attr.aria-labelledby]="menu.id">
-              <a *ngFor="let subMenu of menu.menus" class="dropdown-item" [href]="subMenu.link">{{subMenu.name}}</a>
+              <a *ngFor="let subMenu of menu.menus" class="dropdown-item" [routerLink]="subMenu.link">{{subMenu.name}}</a>
             </div>
           </li>
         </ul>
