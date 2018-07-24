@@ -25,11 +25,23 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.getMenus()
+    this.getSetting()
+  }
+
+  getSetting(){
+    this.db.object("setting").valueChanges().subscribe((result)=>{
+      console.log(result)
+      this.title = result.title
+    });
   }
 
   getMenus(){
     this.db.list("menus").valueChanges().subscribe((result)=>{
       console.log(result)
+      this.menus = result;
+      /*result.forEach((menu)=>{
+        this.menus.push(menu)
+      })*/
     })
   }
 
